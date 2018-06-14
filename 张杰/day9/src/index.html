@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 375 * 100 + 'px'
+    </script>
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="./js/style/swiper.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>头部</header>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/15.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/17.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/18.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/19.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/21.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/21.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="content">
+            <div class="text" up="上拉加载" down="下拉刷新">
+                <ul id="ul">
+                </ul>
+            </div>
+        </div>
+        <footer>
+            页脚
+        </footer>
+
+    </div>
+    <script id="piy" type="text/x-handlebars-template">
+        {{#each list}}
+
+        <li>
+            <img src=" {{img}} " alt="">
+            <span>{{text}}</span>
+        </li>
+        {{/each}}
+    </script>
+    <script src="./js/style/require.js"></script>
+    <script>
+        require(['./js/slid/config.js'], function() {
+            require(['main'])
+        })
+    </script>
+</body>
+
+</html>
